@@ -49,6 +49,7 @@ Variables
   --ff-secondary: "Roboto", sans-serif;
   --ff-ternary: "Open Sans", sans-serif;
   --transition: all 0.3s linear;
+  --l-transition: all 0.6s linear; 
   --spacing: 0.1rem;
   --radius: 0.25rem;
   --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
@@ -173,8 +174,8 @@ p {
 
 .btn {
   text-transform: uppercase;
-  background: var(--clr-primary-5);
-  color: var(--clr-primary-10);
+  background: var(--clr-primary-1);
+  color: var(--clr-white);
   padding: 0.375rem 0.75rem;
   letter-spacing: var(--spacing);
   display: inline-block;
@@ -188,7 +189,11 @@ p {
 }
 .btn:hover {
   background: var(--clr-primary-7);
-  color: var(--clr-primary-1);
+  color: var(--clr-white);
+}
+
+.page-btn {
+  margin-top: 2rem;
 }
 
 /* section */
