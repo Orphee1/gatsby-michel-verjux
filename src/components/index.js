@@ -5,6 +5,7 @@ import HomePictures from "./HomePictures"
 import Landing from "./Landing"
 import Layout from "./layout"
 import NavBar from "./NavBar"
+import Pictures from "./Pictures"
 import SideBar from "./SideBar"
 export {
   BackGround,
@@ -14,5 +15,6 @@ export {
   Landing, 
   Layout, 
   NavBar,
+  Pictures,
   SideBar
 }

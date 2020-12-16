@@ -1,16 +1,49 @@
 import React from 'react'
 import styled from "styled-components"
-import {Layout} from "../components"
+import {graphql} from "gatsby"
+import {Layout, Pictures} from "../components"
 
-const PicturesPage = () => {
+
+const PicturesPage = ({data}) => {
+  console.log(data);
   return (
     <Wrapper>
       <Layout>
-      <h2>Hello from Pictures Page</h2>
+     <Pictures />
       </Layout>
     </Wrapper>
   )
 }
+
+export const query = graphql`
+  {
+    allAirtable(filter: {table: {eq: "pictures"}}) {
+      nodes {
+        id
+        data {
+          collect
+          context
+          credit
+          medium
+          place
+          slug
+          title
+          town
+          year
+          pic {
+            localFiles {
+              childImageSharp {
+                fluid {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`
 
 export default PicturesPage
 
