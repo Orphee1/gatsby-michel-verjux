@@ -1,6 +1,13 @@
 module.exports = {
   siteMetadata: {
-    title: "gatsby-michel-verjux",
+    title: "Michel Verjux",
+    description: "Portfolio of Michel Verjux artist",
+    author: "Hugo Lattard", 
+    titleTemplate: "Michel Verjux", 
+    url: "https://michel-verjux.com", 
+    // image: "",  
+    twitterUsername: `@HugoLattard`,
+
   },
   plugins: [
     "gatsby-plugin-styled-components",
