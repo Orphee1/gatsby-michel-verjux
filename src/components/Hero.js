@@ -41,7 +41,7 @@ margin-top: -5rem;
 color: var(--clr-white); 
 .hero-center {
   display: grid;
-  height: 80%;
+  height: 85%;
   h1 {
     place-self: end start; 
   }

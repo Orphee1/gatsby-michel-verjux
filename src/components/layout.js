@@ -14,6 +14,7 @@ const Layout = ({children}) => {
       isSideBarOpen={isSideBarOpen}
       toggleSide={toggleSide}
       />
+     
 <SideBar 
 isSideBarOpen={isSideBarOpen}
 toggleSide={toggleSide}

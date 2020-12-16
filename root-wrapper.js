@@ -1,5 +1,6 @@
 import React from 'react';
 import {createGlobalStyle } from "styled-components"
+import {AppProvider} from "./src/context/globalContext"
 
 
 const GlobalStyle = createGlobalStyle`
@@ -43,8 +44,9 @@ Variables
   --clr-green-dark: hsl(125, 67%, 44%);
   --clr-green-light: hsl(125, 71%, 66%);
   --clr-black: #222;
-  --ff-primary: "Roboto", sans-serif;
-  --ff-secondary: "Open Sans", sans-serif;
+  --ff-primary: 'Montserrat', sans-serif;
+  --ff-secondary: "Roboto", sans-serif;
+  --ff-ternary: "Open Sans", sans-serif;
   --transition: all 0.3s linear;
   --spacing: 0.1rem;
   --radius: 0.25rem;
@@ -387,5 +389,8 @@ Debug
 export const wrapRootElement = ({element}) => {
 return <>
 <GlobalStyle />
-{element} </>
+<AppProvider>
+{element} 
+</AppProvider>
+</>
 }

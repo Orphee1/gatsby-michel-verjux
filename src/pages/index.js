@@ -1,10 +1,19 @@
 import React from 'react'
-import { Hero , HomePictures, Layout} from "../components"
+import { Hero , HomePictures, Landing, Layout} from "../components"
+import {useGlobalContext} from "../context/globalContext"
 const Home = () => {
+  const {isLanding} = useGlobalContext(); 
+  
   return (
     <Layout>
+      {isLanding ? (
+        <Landing />
+      ) :(
+<>
       <Hero />
       <HomePictures />
+      </>
+      ) }
     </Layout>
   )
 }
