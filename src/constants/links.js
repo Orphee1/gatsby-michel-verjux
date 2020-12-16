@@ -30,11 +30,19 @@ const links = [
 
 ]
 
+const activeStyles = {
+  color: "#bb2525", 
+  background: "white", 
+  padding: "0.2rem 0.4rem", 
+  borderRadius : "O.25rem"
+}
+
 const tempLinks = links.map(link => {
   const {id, text, url} = link
 return <li key={id} >
 <Link
 to={url}
+activeStyle={activeStyles}
 >
 {text}
 </Link>

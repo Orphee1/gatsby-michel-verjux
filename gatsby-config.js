@@ -4,7 +4,7 @@ module.exports = {
     description: "Portfolio of Michel Verjux artist",
     author: "Hugo Lattard", 
     titleTemplate: "Michel Verjux", 
-    url: "https://michel-verjux.com", 
+    siteUrl: "https://michel-verjux.com", 
     // image: "",  
     twitterUsername: `@HugoLattard`,
 

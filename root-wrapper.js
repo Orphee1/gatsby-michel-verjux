@@ -40,6 +40,7 @@ Variables
   --clr-grey-10: #f1f5f8;
   --clr-white: #fff;
   --clr-red-dark: hsl(360, 67%, 44%);
+  /* 	#bb2525 */ 
   --clr-red-light: hsl(360, 71%, 66%);
   --clr-green-dark: hsl(125, 67%, 44%);
   --clr-green-light: hsl(125, 71%, 66%);
@@ -224,7 +225,10 @@ p {
   color: var(--clr-red-dark);
   
 }
-
+/* gatsby links */
+.active-link {
+color: var(--clr-red-dark); 
+}
 
 /*
 =============== 

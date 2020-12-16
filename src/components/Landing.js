@@ -29,7 +29,10 @@ const Landing = () => {
 <button
 onClick={closeLanding}
 >
-
+<div className="section-center landing-center">
+  <h1>Michel Verjux</h1>
+  <p>Isabelle Lartault et Michel Verjux, <i>Tout le reste est dans l'ombre</i>, Nuit Blanche, Paris, 2010. &copy; André Morin.</p>
+</div>
 </button>
       </BackGround>
     </Wrapper>
@@ -50,5 +53,41 @@ button {
   cursor: pointer; 
   outline: none; 
   background: transparent; 
+}
+.landing-center {
+height: 85%; 
+display: grid; 
+grid-template-rows: 50% 50%; 
+grid-template-columns: 50% 50%; 
+p {
+  grid-row: 2/3; 
+  color: var(--clr-white); 
+  place-self: end end;
+  width: 100px;  
+  font-size: 0.8rem; 
+  text-align: right; 
+
+}
+h1 {
+  grid-row: 2/3; 
+  color: var(--clr-white); 
+  align-self: start ; 
+  justify-self: start; 
+  
+}
+}
+  @media screen and (min-width: 800px) {
+.landing-center {
+   height: 90%;
+h1 {
+  grid-column: 1/3; 
+  align-self: end; 
+}
+p {
+  grid-column: 2/3; 
+  width: 400px; 
+}
+}
+  
 }
 `
