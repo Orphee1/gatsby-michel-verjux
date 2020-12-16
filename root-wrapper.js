@@ -12,7 +12,7 @@ Variables
 
 :root {
   /* dark shades of primary color*/
-  --clr-primary-1: hsl(21, 91%, 17%);
+  --clr-primary-1: black;
   --clr-primary-2: hsl(21, 84%, 25%);
   --clr-primary-3: hsl(21, 81%, 29%);
   --clr-primary-4: hsl(21, 77%, 34%);
@@ -231,7 +231,7 @@ Sidebar
 */
 
 .sidebar {
-background: #222;
+background: var(--clr-primary-1);
   position: fixed;
   top: 0;
   left: 0;
