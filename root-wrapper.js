@@ -96,7 +96,7 @@ h4 {
   font-weight: 400;
 }
 h1 {
-  font-size: 2rem;
+  font-size: 4rem;
 }
 h2 {
   font-size: 2rem;
@@ -113,7 +113,7 @@ p {
 }
 @media screen and (min-width: 800px) {
   h1 {
-    font-size: 3.5rem;
+    font-size: 6rem;
   }
   h2 {
     font-size: 2.5rem;

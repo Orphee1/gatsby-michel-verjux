@@ -1,9 +1,10 @@
 import React from 'react'
-import {Layout} from "../components"
+import { Hero , HomePictures, Layout} from "../components"
 const Home = () => {
   return (
     <Layout>
-      
+      <Hero />
+      <HomePictures />
     </Layout>
   )
 }

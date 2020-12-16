@@ -24,6 +24,7 @@ export default NavBar
 
 const Wrapper = styled.nav`
 position: relative; 
+z-index: 1;
 background: transparent; 
 height: 5rem; 
  display: flex;
@@ -56,7 +57,7 @@ height: 5rem;
 .nav-links {
   display: none; 
 }
-  @media screen and (min-width: 768px) { 
+  @media screen and (min-width: 800px) { 
     .toggle-btn {
       display: none;
     }
@@ -69,8 +70,7 @@ height: 5rem;
 }
 .nav-links a {
     text-transform: capitalize;
-      /* color: var(--clr-white); */
-      color: red;
+      color: var(--clr-white);
       font-weight: bold;
       letter-spacing: var(--spacing);
       transition: var(--transition);

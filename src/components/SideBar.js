@@ -2,7 +2,7 @@ import React from 'react'
 import Links from "../constants/links"
 import SocialLinks from "../constants/socialLinks"
 import { FaTimesCircle } from "react-icons/fa"
-import socialLinks from '../constants/socialLinks'
+
 
 const SideBar = ({isSideBarOpen, toggleSide}) => {
   return (
