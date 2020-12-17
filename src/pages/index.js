@@ -1,5 +1,5 @@
 import React from 'react'
-import { Hero , HomePictures, Landing, Layout} from "../components"
+import { Articles, Hero ,HomePictures, Landing, Layout} from "../components"
 import {useGlobalContext} from "../context/globalContext"
 import {graphql} from "gatsby"
 
@@ -19,6 +19,7 @@ const Home = ({data}) => {
       <HomePictures 
       pictures={pictures}
       />
+      <Articles />
       </>
       ) }
     </Layout>

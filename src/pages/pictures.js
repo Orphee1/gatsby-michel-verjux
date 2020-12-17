@@ -5,11 +5,15 @@ import {Layout, Pictures} from "../components"
 
 
 const PicturesPage = ({data}) => {
-  console.log(data);
+  // console.log(data);
+  const {allAirtable : {nodes: pictures}} = data
+
   return (
     <Wrapper>
       <Layout>
-     <Pictures />
+     <Pictures 
+     pictures={pictures}
+     />
       </Layout>
     </Wrapper>
   )

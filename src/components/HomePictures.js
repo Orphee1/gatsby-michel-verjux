@@ -1,16 +1,18 @@
 import React from 'react'
 import {Link} from "gatsby"
 import Image from "gatsby-image"; 
+import {Title} from "./index"
 import styled from "styled-components"
 
-const HomePictures = ({pictures}) => {
+const HomePictures = ({pictures, title}) => {
   // console.log(pictures);
   
   return (
     <Wrapper>
+<Title  title={title || "Choix d'images"}  />
      <div className="tile-layout">
 {pictures.map((picture, index)=> {
-console.log(picture);
+// console.log(picture);
 const {id } = picture; 
 const {pic, title, year, town} = picture.data; 
 const fluid = pic.localFiles[0].childImageSharp.fluid
@@ -29,7 +31,7 @@ fluid={fluid}
 
      </div>
      <Link to="/pictures" className="btn " >
-       Choix d'Images
+       Plus d'Images
      </Link>
     </Wrapper>
   )
@@ -62,15 +64,13 @@ padding : 5rem 0;
     article {
     position: relative;
     overflow: hidden;
-    /* border-radius: var(--radius); */
     background: var(--clr-primary-1);
     &:hover .img {
       opacity: 0.2;
     }
     .info {
       position: absolute;
-      /* bottom: 9; */
-      left: 35%;
+      left: 45%;
       transform: translate(-50%, -50%);
       width: 100%;
       opacity: 0;
