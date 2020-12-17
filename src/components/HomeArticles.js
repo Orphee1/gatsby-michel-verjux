@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from "styled-components"
+import {Link} from "gatsby"; 
 
-
-const Articles = ({articles}) => {
+const HomeArticles = ({articles}) => {
   // console.log(articles);
   return (
     <Wrapper>
@@ -22,21 +22,23 @@ return <article
 key={id}
 >
 <h3>{title}</h3>
-<p>{content}</p>
+<p>{content.substring(0, 450)}...</p>
 
 </article>
          })}
       
        </div>
-       <button className="btn">poster un article</button>
-     
+      
+        <Link 
+        to="/articles/"
+        className="btn" >Plus de textes</Link>
        
       </div>
     </Wrapper>
   )
 }
 
-export default Articles
+export default HomeArticles
 
 const Wrapper = styled.section`
 background: var(--clr-primary-1);
@@ -75,32 +77,21 @@ color: var(--clr-white);
     gap: 1rem;
     /* safari workaround */
     grid-gap: 1rem;
-    grid-template-rows: auto auto;
-    grid-auto-rows: auto;
+    grid-template-rows: 300px 300px;
+    grid-auto-rows: 300px;
     p {
 color: var(--clr-grey-7); 
     }
     article {
       height: auto; 
-      
     }
-  }
-  button {
-    display: block;
-    width: 12rem;
-    text-align: center;
-    margin: 0 auto;
-    margin-top: 3rem;
-    color: var(--clr-primary-1); 
-    background: var(--clr-white); 
   }
   @media screen and (min-width: 992px) {
 
- article {
-      /* height: auto;  */
-      width: 60vw; 
-    }
-     
+     .articles-container { 
+grid-template-columns: 1fr 1fr; 
+
+     }
   }
   
 

@@ -45,6 +45,9 @@ baseId: process.env.GATSBY_AIRTABLE_BASE_ID,
 tableName: `pictures`, 
 mapping: {pic: `fileNode` }
 
+        }, {
+          baseId: process.env.GATSBY_AIRTABLE_BASE_ID,
+          tableName: `articles`
         }]
       }
     }
