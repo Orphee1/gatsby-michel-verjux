@@ -196,6 +196,16 @@ p {
   margin-top: 2rem;
 }
 
+.post-btn {
+display: none; 
+}
+@media (min-width: 1200px) { 
+.post-btn {
+display: block; 
+}
+
+}
+
 /* section */
 .section {
   padding: 5rem 0;
@@ -363,7 +373,101 @@ Sidebar Animation
     opacity: 1;
   }
 }
+/*
+=============== 
+Modals 
+===============
+*/
 
+.modal-articles-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: grid;
+  place-items: center;
+  transition: var(--transition);
+  visibility: hidden;
+  z-index: -1;
+}
+/* OPEN/CLOSE MODAL */
+.show-modal-articles {
+  visibility: visible;
+  z-index: 10;
+}
+.modal-container {
+  background: var(--clr-white);
+  border-radius: var(--radius);
+  width: 90vw;
+  height: 80vh;
+  max-width: var(--max-width);
+  text-align: center;
+  display: grid;
+  place-items: center;
+  position: relative;
+}
+.close-modal-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 2rem;
+  background: transparent;
+  border-color: transparent;
+  color: var(--clr-red-dark);
+  cursor: pointer;
+  outline: none; 
+}
+
+form {
+   padding: 1rem;
+  width: 90%;
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+}
+.form-group {
+ width: 100%; 
+  display: flex; 
+  justify-content: space-between; 
+  div {
+    margin: 0 1rem; 
+    flex: 1; 
+  }
+div:nth-child(2) {
+   flex: 2; 
+   display: flex; 
+   flex-direction: column; 
+}
+}
+.form-control {
+  display: block;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--clr-primary-1);
+  margin-bottom: 1.25rem;
+  background: var(--clr-grey-10);
+  border-radius: var(--radius);
+  text-transform: uppercase;
+  letter-spacing: var(--spacing);
+}
+.form-control::placeholder {
+  font-family: var(--ff-primary);
+  color: var(--clr-primary-2);
+  text-transform: uppercase;
+  letter-spacing: var(--spacing);
+}
+
+.submit-btn {
+  display: block;
+  width: 20%;
+  padding: 1rem;
+  border-bottom-left-radius: var(--radius);
+  border-bottom-right-radius: var(--radius);
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+}
 /*
 =============== 
 Debug 

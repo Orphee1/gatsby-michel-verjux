@@ -4,15 +4,19 @@ const AppContext = createContext()
 
 const AppProvider = ({children}) => {
 const [isLanding, setIsLanding] = useState(true)
+const [modalArticles, setModalArticles] = useState(true)
 
 const closeLanding = () => (
   setIsLanding(false)
 )
 
+const toggleModalArticles = () => {
+  setModalArticles(!modalArticles); 
+}
 
 return (
   <AppContext.Provider
-  value={{ isLanding, closeLanding  }}
+  value={{ isLanding, closeLanding, modalArticles, toggleModalArticles  }}
   >
     {children}
   </AppContext.Provider>

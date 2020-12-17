@@ -1,9 +1,11 @@
 import React from 'react'
 import styled from "styled-components"
-
+import {useGlobalContext} from "../context/globalContext"
 
 const Articles = ({articles}) => {
   // console.log(articles);
+  const {toggleModalArticles} = useGlobalContext(); 
+ 
   return (
     <Wrapper>
       <div className="section-center">
@@ -28,7 +30,9 @@ key={id}
          })}
       
        </div>
-       <button className="btn">poster un article</button>
+       <button className="btn post-btn"  
+       onClick={toggleModalArticles}
+       >poster un article</button>
      
        
       </div>
@@ -86,7 +90,7 @@ color: var(--clr-grey-7);
     }
   }
   button {
-    display: block;
+    /* display: block; */
     width: 12rem;
     text-align: center;
     margin: 0 auto;

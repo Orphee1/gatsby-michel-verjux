@@ -1,16 +1,18 @@
 import React, {useState, useEffect} from 'react'
 // import {graphql} from "gatsby"
 import styled from "styled-components"
-import {Articles, Layout} from "../components"
+import {Articles, Layout, ModalArticles} from "../components"
 import base from "../components/Airtable"
 
 // console.log(base);
 
 const ArticlesPage = ({data}) => {
+
+
 const [posts, setPosts] = useState({})
 const [loading, setLoading] = useState(true)
 
-!loading && console.log(posts);
+// !loading && console.log(posts);
 
 const getRecords = async () => {
 const records = await base("articles").select({}).firstPage().catch(error => console.log(error))
@@ -36,10 +38,12 @@ getRecords()
 
     <Articles 
     articles={posts}
+    
     />
           )}
-     
-    
+    <ModalArticles 
+    />
+  
       </Layout>
     </Wrapper>
   )
