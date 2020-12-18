@@ -7,7 +7,7 @@ import {Layout, Pictures} from "../components"
 const PicturesPage = ({data}) => {
   // console.log(data);
   const {allAirtable : {nodes: pictures}} = data
-
+// console.log(pictures);
   return (
     <Wrapper>
       <Layout>
@@ -33,7 +33,7 @@ export const query = graphql`
           slug
           title
           town
-          year
+        
           pic {
             localFiles {
               childImageSharp {

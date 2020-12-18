@@ -8,6 +8,7 @@ const Home = ({data}) => {
   const {isLanding} = useGlobalContext(); 
   // console.log(data);
 const {queryPics: {nodes : pictures} } = data; 
+console.log(pictures);
  const {queryArticles : {nodes : articles}} = data; 
  
   return (
