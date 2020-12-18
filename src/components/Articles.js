@@ -1,11 +1,16 @@
 import React from 'react'
 import styled from "styled-components"
 import {useGlobalContext} from "../context/globalContext"
+import ReactMarkdown from "react-markdown"
 
-const Articles = ({articles}) => {
-  // console.log(articles);
-  const {toggleModalArticles} = useGlobalContext(); 
+
+const Articles = ({articles, articlesMd}) => {
  
+  const {toggleModalArticles} = useGlobalContext(); 
+
+
+
+
   return (
     <Wrapper>
       <div className="section-center">
@@ -16,7 +21,7 @@ const Articles = ({articles}) => {
         </h2>
         </div>
        <div className="articles-container">
-         {articles.map(article => {
+         {/* {articles.map(article => {
 const {id, data} = article; 
 const {content, title} = data; 
 return <article
@@ -27,9 +32,21 @@ key={id}
 <p>{content}</p>
 
 </article>
-         })}
+         })} */}
       
        </div>
+       <div className="articles-container">
+{articlesMd.map(item => {
+  const {id, fields: {content}} = item; 
+  return <article>
+    <ReactMarkdown>
+      {content}
+    </ReactMarkdown>
+  </article>
+
+})}
+       </div>
+ 
        <button className="btn post-btn"  
        onClick={toggleModalArticles}
        >poster un article</button>
@@ -82,10 +99,11 @@ color: var(--clr-white);
     grid-template-rows: auto auto;
     grid-auto-rows: auto;
     p {
-color: var(--clr-grey-7); 
+color: var(--clr-white); 
     }
     article {
       height: auto; 
+    
       
     }
   }

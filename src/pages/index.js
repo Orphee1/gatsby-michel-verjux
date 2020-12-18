@@ -66,7 +66,7 @@ export const query = graphql`
         content
         title
         author
-        editor
+     
         place
        
       }

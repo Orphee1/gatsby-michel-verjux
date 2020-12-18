@@ -408,6 +408,9 @@ Modals
   place-items: center;
   position: relative;
 }
+.modal-container > div {
+  width: 40%; 
+}
 .close-modal-btn {
   position: absolute;
   top: 1rem;
@@ -419,6 +422,8 @@ Modals
   cursor: pointer;
   outline: none; 
 }
+
+/* -- Form -- */ 
 
 form {
    padding: 1rem;
@@ -467,6 +472,47 @@ div:nth-child(2) {
   border-bottom-right-radius: var(--radius);
   border-top-right-radius: 0;
   border-top-left-radius: 0;
+}
+/* -- Markdown -- */ 
+
+.markdown {
+  height: 42vh; 
+  width: 100%;
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+    column-gap: 4rem;
+    row-gap: 4rem;
+}
+.input {
+  border-color: transparent;
+  border-radius: var(--radius);
+  font-size: 1.2rem;
+  line-height: 2;
+  box-shadow: var(--dark-shadow);
+  min-height: 30vh;
+}
+.input,
+.result {
+  padding: 1rem 2rem;
+}
+.result{
+  height: auto;
+  overflow-y: scroll; 
+  background: var(--clr-grey-9)
+}
+/* -- Md styling -- */ 
+blockquote {
+  font-size: 2rem;
+  font-style: italic;
+  border-left: 5px solid var(--clr-grey-5);
+  color: var(--clr-grey-5);
+  padding-left: 2rem;
+  line-height: 2;
+  margin-bottom: 1.5rem;
+}
+blockquote ::first-letter {
+  text-transform: uppercase;
 }
 /*
 =============== 

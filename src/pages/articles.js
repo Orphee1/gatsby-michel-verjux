@@ -10,9 +10,11 @@ const ArticlesPage = ({data}) => {
 
 
 const [posts, setPosts] = useState({})
+const [postsMd, setPostsMd] = useState({})
 const [loading, setLoading] = useState(true)
 
 // !loading && console.log(posts);
+// !loading && console.log(postsMd);
 
 const getRecords = async () => {
 const records = await base("articles").select({}).firstPage().catch(error => console.log(error))
@@ -21,11 +23,25 @@ const newPosts = records.map(record => {
   return {id: id, data: fields}
 })
 setPosts(newPosts); 
+const recordsMd = await base("markdown").select({}).firstPage().catch(error => console.log(error))
+  const newPostsMd = recordsMd.map(recordMd => {
+    const {id, fields} = recordMd
+    return {id, fields }
+  })
+setPostsMd(newPostsMd)
 setLoading(false); 
 }
 
+// const getMdRecords = async () => {
+//   const records = await base("markdown").select({}).firstPage().catch(error => console.log(error))
+//   console.log(records)
+// }
+
 useEffect(()=> {
+
 getRecords()
+// getMdRecords()
+
 }, [])
 
   // const {queryArticles : {nodes : articles}} = data; 
@@ -38,6 +54,7 @@ getRecords()
 
     <Articles 
     articles={posts}
+    articlesMd={postsMd}
     
     />
           )}

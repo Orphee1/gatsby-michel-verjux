@@ -2,10 +2,15 @@ import React, {useState} from 'react'
 import {useGlobalContext} from "../context/globalContext"
 import { FaTimes } from 'react-icons/fa';
 import base from "../components/Airtable"
+import ReactMarkdown from "react-markdown"
+import { useStaticQuery } from 'gatsby';
 
 const ModalArticles = () => {
+
   const { modalArticles, toggleModalArticles} = useGlobalContext(); 
-  const [loading, setLoading] = useState(false)
+  const [displayMode, setDisplayMode] = useState("markdown"); 
+  
+  // const [loading, setLoading] = useState(false)
 const [post, setPost] = useState({
   title: "", 
   author: "", 
@@ -22,7 +27,7 @@ const [post, setPost] = useState({
 const handleSubmit= async (event) => {
   event.preventDefault()
   console.log("handle fired");
-setLoading(true); 
+// setLoading(true); 
 const records = await base("articles").create([
   {"fields": {
     title: post.title, 
@@ -36,21 +41,60 @@ const records = await base("articles").create([
   }}
 ]).catch(error => console.log(error))  
 console.log(records); 
-setLoading(false)
+// setLoading(false)
 toggleModalArticles()
 }
 
 
+// Markdown posts
+
+ const [postMarkdown, setPostMarkdown] = useState(
+  {
+    name: "",
+    content: '### Markdown preview'
+  })
+
+  const handleMdSubmit = async (event) => {
+    event.preventDefault()
+    // console.log("handle Md fired");
+try {
+const records = await base("markdown").create([{
+  "fields": {
+    name: postMarkdown.name, 
+    content: postMarkdown.content}
+}])
+if(records) {
+  console.log(records);
+  toggleModalArticles()
+}
+} catch (error) {
+console.log(error);
+alert("An error occured connecting Airtable")
+}
+
+  }
 
   return (
     <div className={`${modalArticles ? `modal-articles-overlay show-modal-articles` : ` modal-articles-overlay`}`}>
       <div className="modal-container">
+        <div className="s-b">
+
         <h3>Poster un article</h3>
+        <select name="display" id="disp"
+        onChange={(event) => {
+          setDisplayMode(event.target.value); 
+        }}
+        >
+          <option value="normal">normal</option>
+          <option value="mardown">markdown</option>
+        </select>
+        </div>
         <button className="close-modal-btn"
         onClick={toggleModalArticles}
         >
           <FaTimes />
         </button>
+        {displayMode === "normal" ? (
        <form action=""
        onSubmit={handleSubmit}
        >
@@ -116,7 +160,38 @@ toggleModalArticles()
               envoyer
             </button>
         </form>
-        <h3>Markdown preview</h3>
+        ) : (
+
+      
+     
+          <form action="" className="fl-col"
+          onSubmit={handleMdSubmit}
+          >
+            <input 
+            style={{width: "30%"}}
+            type="text" className="form-control"
+            value={postMarkdown.name}
+            onChange={(event) => {
+              setPostMarkdown({...postMarkdown, name: event.target.value})
+            }}
+            />
+          <section className="markdown">
+            <textarea className="input"
+            placeholder="Article en markdown"
+            value={postMarkdown.content}
+            onChange={(event) => {
+              setPostMarkdown({...postMarkdown, content: event.target.value })
+            }}
+            ></textarea>
+            <article className="result">
+              <ReactMarkdown>
+                {postMarkdown.content}
+              </ReactMarkdown>
+            </article>
+          </section>
+          <button className="btn submit-btn">Envoyer</button>
+          </form>
+        )}
       </div>
       
     </div>

@@ -48,7 +48,12 @@ mapping: {pic: `fileNode` }
         }, {
           baseId: process.env.GATSBY_AIRTABLE_BASE_ID,
           tableName: `articles`
-        }]
+        }, 
+      {
+        baseId: process.env.GATSBY_AIRTABLE_BASE_ID,
+        tableName: `markdown`
+      }
+      ]
       }
     }
 

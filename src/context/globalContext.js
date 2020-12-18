@@ -4,7 +4,7 @@ const AppContext = createContext()
 
 const AppProvider = ({children}) => {
 const [isLanding, setIsLanding] = useState(true)
-const [modalArticles, setModalArticles] = useState(true)
+const [modalArticles, setModalArticles] = useState(false)
 
 const closeLanding = () => (
   setIsLanding(false)
